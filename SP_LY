@@ -1,0 +1,7 @@
+SP LY = 
+    CALCULATE(
+        [Total Revenue],
+        SAMEPERIODLASTYEAR(
+            Calendar_Dim[Date]
+        )
+    )
