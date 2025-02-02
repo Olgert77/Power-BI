@@ -1,0 +1,6 @@
+WC Subtitle = 
+    IF(
+        [Selected Region] <> 0,
+    SELECTEDVALUE(Region_Dim[Region]),
+    "Carpaty"
+    )
