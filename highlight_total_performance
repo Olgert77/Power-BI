@@ -1,0 +1,7 @@
+Highlight Performance Column = 
+    SWITCH(
+        TRUE(),
+            [Performance%] >= 1,
+            "#108AAB",
+            "#B3B3B3"
+    )
