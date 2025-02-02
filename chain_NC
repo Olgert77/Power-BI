@@ -1,0 +1,8 @@
+Chain NC = 
+CALCULATE(
+    DIVIDE(
+        [# Visited Pharmacies],
+        [# All Pharmacies]
+    ),
+    Calendar_Dim[Year] = "2023"
+)
