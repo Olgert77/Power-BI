@@ -1,0 +1,7 @@
+Highlight EI = 
+    SWITCH(
+        TRUE(),
+            [EI Region] < 100,
+            "rgba(230, 108, 55, 0.9)",
+            "#605E5C"
+    )
