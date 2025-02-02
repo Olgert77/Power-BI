@@ -1,0 +1,2 @@
+Chain Coverage = 
+    FORMAT([Chain WC], "#0% WC") & " | " & FORMAT([Chain NC], "#0% NC")
