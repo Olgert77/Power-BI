@@ -1,0 +1,7 @@
+Highlight MoM Chain Column = 
+    SWITCH(
+        TRUE(),
+            [MoM Chain %] >= 0,
+            "#108AAB",
+            "#B3B3B3"
+    )
