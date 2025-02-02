@@ -1,0 +1,5 @@
+EI Region new = 
+    DIVIDE(
+    1 + [GR% Region new],
+    1 + [GR% Ukraine new]    
+  )
