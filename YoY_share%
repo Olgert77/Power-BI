@@ -1,0 +1,9 @@
+YoY %Share Region in Teva = 
+    IF(
+        [Total Revenue] <> 0,
+    DIVIDE(
+        [YTD Share% Region in Teva],
+        [LY YTD Share% Region in Teva]
+    ) -1
+    , BLANK()
+    )
