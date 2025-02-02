@@ -1,0 +1,11 @@
+Highlight OOS = 
+    IF(
+        [Selected Brand] <> 0,
+    SWITCH(
+        TRUE(),
+            [OOS] >= 1,
+            "rgba(230, 108, 55, 0.9)",
+            "#605E5C"
+    ),
+   "#605E5C"
+)
