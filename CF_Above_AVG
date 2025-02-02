@@ -1,0 +1,19 @@
+CF_AboveAVG =
+VAR Sales = [Total Revenue]
+VAR AVGSalesOverall =
+AVERAGEX(
+    ALLEXCEPT(
+        Calendar_Dim,Calendar_Dim[Date]
+    ),
+    CALCULATE(
+        [Total Revenue]
+    )
+)
+VAR Result =
+IF(
+    Sales>AVGSalesOverall,
+    1,
+    0
+)
+RETURN 
+Result
