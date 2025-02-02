@@ -1,0 +1,20 @@
+MoM Sale In UAH % = 
+VAR  Last_Month_Sale_In_UAH = 
+    IF(
+        ISBLANK([Total Revenue]),
+        BLANK(),  
+    CALCULATE(
+        [Total Revenue],
+        DATEADD('Calendar_Dim'[Date],
+        -1,
+        MONTH)
+    )
+)
+
+VAR Result =
+    DIVIDE(
+        [Total Revenue] - Last_Month_Sale_In_UAH,        
+        Last_Month_Sale_In_UAH,
+        BLANK()
+    )
+RETURN Result
