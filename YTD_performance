@@ -1,0 +1,23 @@
+YTD Performance 2023 = 
+VAR MaxMonth =
+    CALCULATE(
+        MAX(
+        Revenue[Month])
+        ,
+        Calendar_Dim[Year] = "2023"
+    )
+VAR _YTD_Revenue =
+    CALCULATE(
+        [Total Revenue],
+        Calendar_Dim[Month] < MaxMonth
+    ) 
+VAR _YTD_Plan =
+     CALCULATE(
+        [Plan],
+        Calendar_Dim[Month] < MaxMonth
+    ) 
+RETURN
+    DIVIDE(
+        _YTD_Revenue,
+        _YTD_Plan
+    )
