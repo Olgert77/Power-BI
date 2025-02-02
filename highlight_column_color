@@ -1,0 +1,13 @@
+Highlight Column Color = 
+    VAr _highest = 
+        MAXX(ALLSELECTED(Calendar_Dim[Date]),
+        [Weighted Coverage]
+    )
+    VAR _highlight =
+        SWITCH(
+            TRUE(),
+            _highest = [Weighted Coverage],
+            "#108AAB",
+            "#B3B3B3"
+        )
+RETURn _highlight
