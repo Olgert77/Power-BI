@@ -1,0 +1,14 @@
+EI Ukraine = 
+    IF(
+        [Selected Brand] <> 0,
+        IF(
+            [Volume Region in Ukraine] <> 0,
+    CALCULATE(
+        [EI Region],
+        Region_Dim[Region_Id] = 5,
+        REMOVEFILTERS(
+            Region_Dim[Region]
+        )
+    ),
+    BLANK()    
+))
