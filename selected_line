@@ -1,0 +1,2 @@
+Selected Line = 
+    SELECTEDVALUE(Line_Dim[Line_ID],0)
