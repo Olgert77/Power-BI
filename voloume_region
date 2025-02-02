@@ -1,0 +1,5 @@
+Volume Region = 
+    SUM(
+        'Brand_MS%'[Volume Region]
+    )
+    
