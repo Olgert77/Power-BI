@@ -1,0 +1,2 @@
+Selected Brand = 
+    SELECTEDVALUE(Brand_Dim[Brand_Id],0)
