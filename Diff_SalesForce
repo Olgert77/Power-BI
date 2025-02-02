@@ -1,0 +1,55 @@
+Diff_Sales_Force = 
+VAR Number_All_Pharmacies =
+    CALCULATE(
+        DISTINCTCOUNT(
+            Chains_Sale_Out[Client ID]),
+            Chains_Sale_Out[Sale_Out] > 0
+    )
+VAR Number_Visited_Pharmacies =
+    CALCULATE(
+        Number_All_Pharmacies,
+        Chains_Sale_Out[Visited] ="Visited"
+)
+VAR Number_Unvisited_Pharmacies =
+    Number_All_Pharmacies - Number_Visited_Pharmacies
+VAR Total_Sale_Out =
+    SUM(
+        Chains_Sale_Out[Sale_Out]
+    )
+VAR Sale_Out_Visited =
+    CALCULATE(
+        SUM(
+        Chains_Sale_Out[Sale_Out]
+    ),
+        KEEPFILTERS(
+            Chains_Sale_Out[Visited] = "Visited"
+        )
+    )
+VAR Sale_Out_Unvisited = 
+    Total_Sale_Out - Sale_Out_Visited
+VAR Average_Sale_Out_Visited =
+    DIVIDE(
+        Sale_Out_Visited,
+        Number_Visited_Pharmacies
+    )
+VAR Average_All_Region_Unvisited =
+    CALCULATE(
+        [AVG by Chain Unvisited],
+        REMOVEFILTERS(Region_Dim[Region]
+        )
+    )
+VAR Average_Sale_Out_Unvisited =
+    IF(
+        Number_Unvisited_Pharmacies = 0,
+        Average_All_Region_Unvisited,
+        DIVIDE(
+        Sale_Out_Unvisited,
+        Number_Unvisited_Pharmacies
+    )
+)
+VAR Diff_SF_Visited_Unvisited =
+  DIVIDE(
+        Average_Sale_Out_Visited,
+        Average_Sale_Out_Unvisited
+    )
+RETURN Diff_SF_Visited_Unvisited
