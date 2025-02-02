@@ -1,0 +1,9 @@
+MS% Ukraine = 
+    IF(
+        [Selected Brand] <> 0,
+    CALCULATE(
+        [MS% Region],
+        ALL(Region_Dim[Region])
+    ),
+    BLANK()
+)
