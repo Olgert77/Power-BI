@@ -1,0 +1,9 @@
+MS% Region = 
+    IF(
+        [Selected Brand] <> 0,
+    DIVIDE(
+        [Volume Region],
+        [Volume Region in Ukraine]
+    ),
+    BLANK()
+    )
