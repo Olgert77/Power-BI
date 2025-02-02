@@ -1,0 +1,7 @@
+Highlight Staff Values = 
+    SWITCH(
+        TRUE(),
+            [Staff] = 1 && [Selected Region] = 1,
+            "rgba(230, 108, 55, 0.9)",
+            "#605E5C"
+    )
