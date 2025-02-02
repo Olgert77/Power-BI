@@ -1,0 +1,6 @@
+# All Pharmacies = 
+    CALCULATE(
+        DISTINCTCOUNT(
+            Chains_Sale_Out[Client ID]),
+            Chains_Sale_Out[Sale_Out] > 0
+    )
