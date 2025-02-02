@@ -1,0 +1,6 @@
+EI Map = 
+    IF(
+        [Selected Line] = 0,
+        [EI OTC],
+        [EI Line]
+    )
