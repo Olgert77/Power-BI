@@ -1,0 +1,7 @@
+Highlight YoY Region Share Column = 
+    SWITCH(
+        TRUE(),
+            [YoY Region] >= 0,
+            "#108AAB",
+            "#B3B3B3"
+    )
