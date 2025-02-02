@@ -1,0 +1,2 @@
+Visual Subtitle = 
+    SELECTEDVALUE(Region_Dim[Region]) & "  " & SELECTEDVALUE(Brand_Dim[Brand])
