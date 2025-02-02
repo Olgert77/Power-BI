@@ -1,0 +1,7 @@
+Highlight AVG Column = 
+    SWITCH(
+        TRUE(),
+            [AVG Chain] >= [AVG All],
+            "#108AAB",
+            "#B3B3B3"
+    )
