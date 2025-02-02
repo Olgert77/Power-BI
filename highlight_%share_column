@@ -1,0 +1,7 @@
+Highlight %Share Column = 
+    SWITCH(
+        TRUE(),
+            [YoY %Share Region in Teva] > 0,
+            "#108AAB",
+            "#B3B3B3"
+    )
