@@ -1,0 +1,7 @@
+Highlight YoY Share Column = 
+    SWITCH(
+        TRUE(),
+            [YoY Carpaty] >= 0,
+            "#108AAB",
+            "#B3B3B3"
+    )
