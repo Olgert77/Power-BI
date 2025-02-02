@@ -1,0 +1,5 @@
+MS% new = 
+    DIVIDE(
+        [Volume Region],
+        [Volume Ukraine]
+    )
