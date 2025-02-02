@@ -1,0 +1,2 @@
+Selected Region = 
+    SELECTEDVALUE(Region_Dim[Region_Id],0)
