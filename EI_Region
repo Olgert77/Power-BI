@@ -1,0 +1,11 @@
+EI Region = 
+    IF(
+        [Selected Brand] <> 0,
+        IF(
+            [Volume Region] <> 0,
+    DIVIDE(
+    1 + [GR% Region],
+    1 + [GR% Ukraine]    
+  )*100,
+  BLANK()
+))
