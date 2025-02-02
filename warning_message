@@ -1,0 +1,5 @@
+Warning Message = 
+    IF([Selected Brand] = 0,
+     "Select Brand from the list", 
+     ""
+    )
