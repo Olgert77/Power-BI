@@ -1,0 +1,8 @@
+Highlight GR = 
+    SWITCH(
+        TRUE(),
+            [GR% Region] < 0,
+            "rgba(230, 108, 55, 0.9)",
+            "#605E5C"
+    )
+
