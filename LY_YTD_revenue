@@ -1,0 +1,14 @@
+LY YTD Revenue = 
+VAR MaxMonth =
+    CALCULATE(
+        MAX(
+        Revenue[Month])
+        ,
+        Calendar_Dim[Year] = "2023"
+    )
+VAR LY_YTD =
+    CALCULATE(
+        [Total Revenue LY],
+        Calendar_Dim[Month] < MaxMonth
+    ) 
+RETURN LY_YTD
