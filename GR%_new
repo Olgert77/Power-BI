@@ -1,0 +1,18 @@
+GR% Region new = 
+VAR Volume_LY = 
+    CALCULATE(
+        [Volume Region],
+        DATEADD(
+            Calendar_Dim[Date], -1,YEAR
+        )
+    )
+VAR Result = 
+    IF(
+        [Volume Region] <> 0,
+    DIVIDE(
+        [Volume Region],
+        Volume_LY
+    ) - 1,
+    BLANK()
+    )
+RETURN Result
