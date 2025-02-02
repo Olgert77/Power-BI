@@ -1,0 +1,25 @@
+CF_max_min = 
+VAR Sales = [Total Revenue]
+VAR MaxRevenueOverall =
+MAXX(
+    ALLSELECTED(
+        Calendar_Dim[Date]
+    ),
+    CALCULATE([Total Revenue])
+)
+VAR MinRevenueOverall =
+MINX(
+    ALLSELECTED(
+        Calendar_Dim[Date]
+    ),
+    CALCULATE([Total Revenue])
+)
+VAR Result =
+SWITCH(
+    TRUE,
+    Sales = MaxRevenueOverall, "#22957e",
+    Sales = MinRevenueOverall, "#ff908c",
+    "#7bc8fe"
+)
+RETURN
+Result
