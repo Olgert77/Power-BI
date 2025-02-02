@@ -1,0 +1,13 @@
+SF Index = 
+    IF(
+        [# Unvisited Pharmacies] = 0,
+        DIVIDE(
+            [AVG Chain],
+            [AVG All Region SF Sale Out Unvisited]
+        
+    ),
+    DIVIDE(
+        [AVG Chain],
+        [AVG by Chain Unvisited]         
+    ) - 1
+    )
