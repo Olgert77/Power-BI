@@ -1,0 +1,7 @@
+Highlight MoM Column = 
+    SWITCH(
+        TRUE(),
+            [MoM Sale In UAH %] >= 0,
+            "#108AAB",
+            "#B3B3B3"
+    )
