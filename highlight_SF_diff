@@ -1,0 +1,7 @@
+Highlight SF Diff = 
+    SWITCH(
+        TRUE(),
+            [YoY Avg] >= 0,
+            "#108AAB",
+            "#B3B3B3"
+    )
