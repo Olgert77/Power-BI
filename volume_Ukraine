@@ -1,0 +1,7 @@
+Volume Ukraine = 
+        CALCULATE(
+        SUM(
+        'Brand_MS%'[Volume Ukraine]
+        ),
+        Region_Dim[Region] ="Ukraine"
+        )
