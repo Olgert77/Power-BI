@@ -1,0 +1,8 @@
+Total Sale Out Visited = 
+    CALCULATE(
+        [Total Sale Out All],
+        FILTER(
+            Chains_Sale_Out,
+            Chains_Sale_Out[Visited] = "Visited"
+        )
+    )
