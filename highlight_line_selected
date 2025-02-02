@@ -1,0 +1,7 @@
+Line Selected = 
+SWITCH(
+    SELECTEDVALUE(Line_Dim[Line]),
+    "CC", "#108AAB",
+    "GP", "#E66C37",
+    BLANK(),"#1E2531"
+)
