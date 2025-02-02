@@ -1,0 +1,9 @@
+LY Total Revenue = 
+    CALCULATE(
+        [Total Revenue],
+        DATEADD(
+            Calendar_Dim[Date],
+            -1,
+            YEAR
+        )
+    )
