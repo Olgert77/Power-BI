@@ -1,0 +1,5 @@
+%Revenue Diff = 
+    DIVIDE(
+        [2023],
+        [2022]
+    ) - 1
