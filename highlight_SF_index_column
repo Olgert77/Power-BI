@@ -1,0 +1,7 @@
+Highlight SF Index Column = 
+    SWITCH(
+        TRUE(),
+            [SF Index] >= 0,
+            "#108AAB",
+            "#B3B3B3"
+    )
