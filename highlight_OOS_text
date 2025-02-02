@@ -1,0 +1,8 @@
+Highlight OOS Text = 
+   
+    SWITCH(
+        TRUE(),
+            [OOS] >= 1 && [Selected Brand] <>0,
+            "rgba(230, 108, 55, 0.9)",
+            "rgba(230, 108, 55, 0)"
+    )
