@@ -1,0 +1,23 @@
+GR% Ukraine = 
+VAR Volume_LY = 
+    CALCULATE(
+        [Volume Ukraine],
+        DATEADD(
+            Calendar_Dim[Date], -1,YEAR
+        )
+    )
+VAR Result = 
+    IF(
+        [Volume Region] <> 0,
+    DIVIDE(
+        [Volume Ukraine],
+        Volume_LY
+    ) - 1,
+    BLANK()
+    )
+RETURN 
+    IF(
+        [Selected Brand] <> 0,
+Result,
+BLANK()
+    )
