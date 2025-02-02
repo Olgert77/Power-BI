@@ -1,0 +1,7 @@
+Highlight Performance 2023 = 
+    SWITCH(
+        TRUE(),
+            [YTD Performance 2023] >= 1,
+            "#108AAB",
+            "#B3B3B3"
+    )
