@@ -1,0 +1,2 @@
+AVG Sales by Chain & YoY% = 
+    FORMAT([avg_2023], "#,K") & " | " & FORMAT([YoY Avg], "#0% YoY")
