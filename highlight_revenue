@@ -1,0 +1,7 @@
+Highlight Revenue = 
+    SWITCH(
+        TRUE(),
+            [2023] > [2022],
+            "#108AAB",
+            "#E66C37"
+    )
