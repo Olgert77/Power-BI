@@ -1,0 +1,6 @@
+MS% Map = 
+    IF(
+        [Selected Line] = 0,
+        [MS% OTC],
+        [MS% Line]
+    )
