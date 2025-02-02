@@ -1,0 +1,11 @@
+Plan Carpaty = 
+    CALCULATE(
+        [Plan],
+        FILTER(
+            ALL(Region_Dim[Region]),
+            Region_Dim[Region] = "Khmelnyckyy" ||
+            Region_Dim[Region] = "Chernivtsi" ||
+            Region_Dim[Region] = "Ivano-Frankivsk" || 
+            Region_Dim[Region] = "Ternopil"
+        )
+    )
