@@ -1,0 +1,2 @@
+Count of Churn for Yes = 
+CALCULATE(COUNTA('churn'[Churn]), 'churn'[Churn] IN { "Yes" })
