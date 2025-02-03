@@ -1,0 +1,5 @@
+Count of PhoneService for Yes = 
+CALCULATE(
+	COUNTA('churn'[PhoneService]),
+	'churn'[PhoneService] IN { "Yes" }
+)
