@@ -1,0 +1,12 @@
+Dependents in % = 
+DIVIDE(
+CALCULATE(COUNT(
+churn[Dependents]), 
+churn[Dependents]="Yes", 
+churn[Churn]= "Yes"), 
+CALCULATE(
+COUNT(
+churn[Dependents]), 
+churn[Churn]="Yes"),
+0
+)
