@@ -1,0 +1,14 @@
+Online Sec. in % = 
+DIVIDE(
+CALCULATE(
+COUNT(
+churn[OnlineSecurity]), 
+churn[OnlineSecurity]="Yes", 
+churn[Churn]="Yes"),
+CALCULATE(
+COUNT(
+churn[OnlineSecurity]),
+churn[Churn]="Yes"
+),
+0
+)
