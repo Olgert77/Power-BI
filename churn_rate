@@ -1,0 +1,9 @@
+churn rate % = 
+DIVIDE (
+        CALCULATE(
+        COUNT(churn[Churn]), churn[Churn] = "yes" )
+        ,
+        CALCULATE ( 
+        COUNT (churn[Churn]),
+        ALLSELECTED (churn[Churn] ) )
+)
