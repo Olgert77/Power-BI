@@ -1,0 +1,13 @@
+SeniorCitizen in % = 
+DIVIDE(
+CALCULATE(
+COUNT(
+churn[SeniorCitizen]), 
+churn[SeniorCitizen]=1, 
+churn[Churn]= "Yes"), 
+CALCULATE(
+COUNT(
+churn[SeniorCitizen]), 
+churn[Churn]="Yes"),
+0
+)
