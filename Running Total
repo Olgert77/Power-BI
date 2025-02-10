@@ -1,0 +1,9 @@
+Running Total =
+VAR MaxDate =
+    MAX ( 'Calendar Lookup'[Date] )
+RETURN
+    CALCULATE (
+        [Total Revenue],
+        'Calendar Lookup'[Date] <= MaxDate,
+        ALL ( 'Calendar Lookup'[Date] )
+    )
