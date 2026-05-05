@@ -1,0 +1,21 @@
+Dynamic Tytle = 
+    VAR TopValues = 2
+    VAR SummeryTBL = 
+        FILTER(
+            TOPN(
+                TopValues,
+                SUMMARIZE('Calendar','Calendar'[Month],'Calendar'[Month_number]),
+                [YoY Net Sales]
+            ),
+            [YoY Net Sales] <> BLANK()
+        )
+    VAR Concat =
+        CONCATENATEX(
+            SummeryTBL,
+            'Calendar'[Month] & " (" & FORMAT([YoY Net Sales], "0%)"),
+            " & ",
+            'Calendar'[Month_number]
+        )
+    VAR MonthLabel = IF(ISEMPTY(SummeryTBL), "No", Concat)
+    RETURN 
+        MonthLabel
