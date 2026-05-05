@@ -1,0 +1,3 @@
+Net Sales Subtitle = 
+    "Months with the highest YoY% Net Sales in" & " " &
+    SELECTEDVALUE('Calendar'[Year]) & " for " & SELECTEDVALUE(DIM_chanel[Channel]) 
