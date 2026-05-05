@@ -1,0 +1,15 @@
+vs LY = 
+VAR _CY = [Net Sales]
+VAR _PY = 
+CALCULATE(
+    [Net Sales],
+    DATEADD('Calendar'[Date],-1,YEAR)
+)
+VAR _perc = DIVIDE(_CY - _PY, _PY)
+VAR _format = SWITCH(
+    TRUE(),
+    _perc > 0, UNICHAR(11165) & " " & FORMAT(_perc,"0%"),
+    _perc < 0, UNICHAR(11167) & " " & FORMAT(_perc*-1,"0%"),
+    FORMAT(_perc,"0%")
+)
+RETURN _format
