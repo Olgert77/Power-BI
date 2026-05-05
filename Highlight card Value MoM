@@ -1,0 +1,21 @@
+Highlight Card Values MoM = 
+VAR _CM = [Net Sales]
+VAR _PM = 
+CALCULATE(
+    [Net Sales],
+    DATEADD('Calendar'[Date],-1,MONTH
+    )
+)
+VAR __perc = 
+    IF(_PM>0,
+    DIVIDE(_CM - _PM, _PM),
+    DIVIDE(_CM -_PM,_PM*-1)
+    )
+VAR _format = 
+ SWITCH(
+    TRUE(),
+    __perc > 0, "Green",
+    __perc < 0, "Red",
+    "Gray"
+ )
+ RETURN _format
