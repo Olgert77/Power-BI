@@ -1,0 +1,2 @@
+Visual Subtitle = 
+    SELECTEDVALUE('Calendar'[Year]) & "  " & SELECTEDVALUE('Calendar'[Month]) & "  " & SELECTEDVALUE(DIM_chanel[Channel])
