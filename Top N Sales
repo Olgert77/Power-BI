@@ -1,0 +1,10 @@
+Top 2 month = 
+CALCULATE(
+    [YoY Net Sales],
+    KEEPFILTERS(
+        TOPN(2,
+        ALLSELECTED('Calendar'),
+        [YoY Net Sales]
+        )
+    )
+)
