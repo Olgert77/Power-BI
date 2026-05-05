@@ -1,0 +1,16 @@
+Highlight Card Values YoY = 
+VAR _CY = [Net Sales]
+VAR _PY = 
+CALCULATE(
+    [Net Sales],
+    DATEADD('Calendar'[Date],-1,YEAR
+    ))
+VAR __perc = DIVIDE(_CY - _PY, _PY)
+VAR _format = 
+ SWITCH(
+    TRUE(),
+    __perc > 0, "Green",
+    __perc < 0, "Red",
+    "Gray"
+ )
+ RETURN _format
