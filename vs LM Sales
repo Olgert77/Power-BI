@@ -1,0 +1,23 @@
+vs LM = 
+VAR _CM = 
+    [Net Sales]
+
+VAR _PM = 
+CALCULATE(
+    [Net Sales],
+    DATEADD('Calendar'[Date],-1,MONTH)
+    )
+
+VAR _perc = 
+    IF(_PM>0,
+    DIVIDE(_CM - _PM, _PM),
+    DIVIDE(_CM -_PM,_PM*-1)
+    )
+
+VAR _format = SWITCH(
+    TRUE(),
+    _perc > 0, UNICHAR(11165) & " " & FORMAT(_perc,"0%"),
+    _perc < 0, UNICHAR(11167) & " " & FORMAT(_perc*-1,"0%"),
+    FORMAT(_perc,"0%")
+)
+RETURN _format
