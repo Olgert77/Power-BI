@@ -1,0 +1,6 @@
+Top Product by Net Sales = 
+"'" & TOPN(
+    1,
+    VALUES(DIM_product[Product]),
+    [Net Sales])
+    & "'"
