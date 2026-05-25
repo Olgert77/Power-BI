@@ -1,0 +1,10 @@
+Text YoY Sales = 
+    VAR YoY = [YoY Net Sales]
+RETURN 
+SWITCH(
+    TRUE(),
+    YoY >= 0, "up" & CONCATENATE(ROUND(YoY * 100,0), "%"),
+    YoY < 0, "down" & CONCATENATE(ROUND(YoY * -100,0), "%"),
+    YoY = BLANK(), "<no data>",
+    BLANK()
+)
