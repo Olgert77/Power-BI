@@ -1,0 +1,7 @@
+Sales Amount of Top Product = 
+VAR _topproductID = 
+TOPN(1,
+VALUES(DIM_product[product_ID]),
+[Net Sales]
+)
+RETURN CALCULATE([Net Sales], FILTER(DIM_product, DIM_product[product_ID] = _topproductID))
