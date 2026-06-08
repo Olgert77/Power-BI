@@ -1,0 +1,20 @@
+    VAR TopValues = 1
+    VAR SummeryTBL = 
+        FILTER(
+            TOPN(
+                TopValues,
+                SUMMARIZE('Calendar','Calendar'[Quater],'Calendar'[Quater_number]),
+                [Gross Profit]
+            ),
+            [Gross Profit] <> BLANK()
+        )
+    VAR Concat =
+        CONCATENATEX(
+            SummeryTBL,
+            "Gross profit " & " " & FORMAT ([Gross Profit], "#,,.0M ") & "in " & 'Calendar'[Quater] & " with YoY of " & FORMAT([YoY Gross Profit], ".0%"),
+            " & ",
+            'Calendar'[Quater_number]
+        )
+    VAR QuaterLabel = IF(ISEMPTY(SummeryTBL), "No", Concat)
+    RETURN 
+        QuaterLabel
