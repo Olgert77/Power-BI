@@ -1,0 +1,12 @@
+    VAR _highest = 
+        MAXX(ALLSELECTED('Calendar'[Quater]),
+        [Gross Profit]
+    )
+    VAR _highlight =
+        SWITCH(
+            TRUE(),
+            _highest = [Gross Profit],
+            "#00A03B",
+            "#B3B3B3"
+        )
+RETURn _highlight
