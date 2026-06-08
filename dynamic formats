@@ -1,0 +1,6 @@
+VAR _netsales = [Net Sales]
+RETURN 
+SWITCH(TRUE(),
+_netsales < 1000, "0",
+_netsales < 1000000, "#,.0K",
+_netsales < 1000000000, "#,,.0M")
