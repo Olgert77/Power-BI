@@ -1,0 +1,9 @@
+VAR _gp = [Gross Profit]
+VAR _gpshare = [GP share% by channel]
+
+RETURN SWITCH(
+    TRUE(),
+    _gp < 1000000, FORMAT(_gp, "0,.00K") & " | " & FORMAT(_gpshare,"0%"),
+    _gp < 1000000000, FORMAT(_gp, "0,,.00M") & " | " & FORMAT(_gpshare,"0%"),    
+    FORMAT(_gp, "0.00") & " | " & FORMAT(_gpshare,"0%")
+)
