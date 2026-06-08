@@ -1,0 +1,5 @@
+    CONCATENATEX(
+        TOPN(1, VALUES(DIM_product[Product]),
+        [Net Sales]),
+        DIM_product[Product]
+        )
