@@ -1,0 +1,6 @@
+VAR _allchannels =
+    CALCULATE(
+        [Gross Profit],
+        ALL(DIM_chanel[Channel])
+    )
+RETURN DIVIDE([Gross Profit],_allchannels)
