@@ -1,0 +1,2 @@
+    "Months with the highest YoY% Net Sales in" & " " &
+    SELECTEDVALUE('Calendar'[Year]) & " by channel " & SELECTEDVALUE(DIM_chanel[Channel]) 
