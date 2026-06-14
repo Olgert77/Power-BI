@@ -1,0 +1,1 @@
+= Table.SelectRows(Source, each not List.MatchesAll(Record.ToList(_), each _ = null))
