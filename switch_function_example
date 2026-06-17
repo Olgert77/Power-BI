@@ -1,0 +1,31 @@
+NomIndicateur.Valeur = 
+VAR __valeur = SWITCH(
+    SELECTEDVALUE(_liste_indicateur_relance[Code]),
+    "PersonnesVisees.N", [PersonnesVisees.Nbre],
+    "Reponse.N", [Reponse.Nbre],
+    "Reponse.T", [Reponse.Taux],
+    "Age.Moy", [Age.Moy],
+    "Emploi.T",[Emploi.Taux],
+    "Etudes.T", [Etudes.Taux],
+    "Recherche.T", [Recherche.Taux],
+    "Inactif.T", [Inactif.Taux],
+    "Chomage.T", [Chomage.Taux],
+    "EtudesLiees.T", [EtudesLiees.TauxRelatif],
+    "EmploiLie.T", [EmploiLie.TauxRelatif],
+    "EmploiTempsPlein.T", [EmploiTempsPlein.TauxRelatif],
+    "EmploiPermanent.T", [EmploiPermanent.TauxRelatif],
+    "SentimentCompetenceEleveEmploi.T", [SentimentCompetenceEleveEmploi.TauxRelatif],
+    "SalaireHoraire.Moy", [SalaireHoraire.Moy],
+    BLANK()
+)
+
+RETURN IF( NOT ISBLANK(__valeur),
+    SWITCH(
+        SELECTEDVALUE(_liste_indicateur_relance[Format]),
+        "Entier", FORMAT(__valeur,"0"),
+        "Décimal", FORMAT(__valeur,"0.0"),
+        "Pourcentage", FORMAT(__valeur,"0%"),
+        "Monnaie", FORMAT(__valeur, "0.00$"),
+        __valeur
+    )
+)
