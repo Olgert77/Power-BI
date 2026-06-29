@@ -1,0 +1,10 @@
+= let  
+      Source = sales_region,
+      MinDate = List.Min(sales_region[Date]),    
+      MaxDate = List.Max(sales_region[Date]), 
+      Duration = Number.From(MaxDate) - Number.From(MinDate) + 1,
+      DateList = List.Dates(MinDate, Duration, #duration(1, 0, 0, 0)),
+      TableFromList = Table.FromList(DateList, Splitter.SplitByNothing(), {"Date"}),  
+      ChangedType = Table.TransformColumnTypes(TableFromList, {{"Date", type date}}) 
+in
+      ChangedType
